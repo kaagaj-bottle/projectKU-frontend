@@ -55,7 +55,7 @@ function Navbar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <AppBar component="nav" position="static">
-        <Toolbar>
+        <Toolbar variant="dense">
           <IconButton
             color="inherit"
             aria-label="open drawer"
