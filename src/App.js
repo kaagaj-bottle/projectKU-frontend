@@ -2,10 +2,10 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import React from "react";
 import NavBar from "./components/Navbar";
-import Home from "./pages/Home";
-import AboutUs from "./pages/About";
-import Notices from "./pages/Notices";
-import Programs from "./pages/Programs";
+import Home from "./pages/Home/Home";
+import AboutUs from "./pages/About/About";
+import Notices from "./pages/Notices/Notices";
+import Programs from "./pages/Programs/Programs";
 
 const App = () => {
   return (
