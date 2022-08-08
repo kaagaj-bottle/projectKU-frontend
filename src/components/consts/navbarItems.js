@@ -10,17 +10,25 @@ const navbarItems = [
     route: "/about",
   },
   {
-    id: 0,
+    id: 2,
     label: "Notices",
     route: "/notices",
   },
   {
-    id: 0,
+    id: 3,
     label: "Programs",
     route: "/programs",
+  },
+  {
+    id: 4,
+    label: "Contact us",
+    route: "/contact",
   },
 ];
 
 export const clubName = "KU INDOORS";
+
+export const bgColour = "cyan";
+export const drawerColor = "crimson";
 
 export default navbarItems;
