@@ -19,14 +19,14 @@ const AboutUs = () => {
     <>
       <Grid
         container
-        columnGap={1}
+        columnGap={3}
         rowGap={2}
         sx={{
           minHeight: "90vh",
           justifyContent: "center",
           display: "flex",
           alignItems: "center",
-          p: 5,
+          pt: 1,
         }}
       >
         {myCards()}
