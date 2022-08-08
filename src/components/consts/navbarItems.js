@@ -31,4 +31,19 @@ export const clubName = "KU INDOORS";
 export const bgColour = "cyan";
 export const drawerColor = "crimson";
 
+export const cardInfo = {
+  cardTitles: ["Intro 1", "Intro 2", "Intro 3"],
+  imageLinks: [
+    "https://picsum.photos/200",
+    "https://picsum.photos/200",
+    "https://picsum.photos/200",
+  ],
+  additionalTexts: ["addtional text", "additional text", "additional text"],
+  cardText: [
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, explicabo?",
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, explicabo?",
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, explicabo?",
+  ],
+};
+
 export default navbarItems;
