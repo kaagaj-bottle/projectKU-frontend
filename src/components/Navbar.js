@@ -13,7 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import navbarItems from "./consts/navbarItems";
+import navbarItems, { drawerColor } from "./consts/navbarItems";
 import { Link } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { clubName } from "./consts/navbarItems";
@@ -28,7 +28,14 @@ function Navbar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        textAlign: "center",
+        backgroundColor: `${drawerColor}`,
+        minHeight: "100%",
+      }}
+    >
       <Typography variant="h6" sx={{ my: 2 }}>
         {clubName}
       </Typography>
