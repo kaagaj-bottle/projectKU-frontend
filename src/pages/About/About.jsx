@@ -19,7 +19,7 @@ const AboutUs = () => {
     <>
       <Grid
         container
-        columnGap={3}
+        columnGap={7}
         rowGap={2}
         sx={{
           minHeight: "90vh",

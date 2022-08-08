@@ -17,7 +17,7 @@ const Home = () => {
         <Grid
           container
           sx={{
-            minHeight: "90vh",
+            minHeight: "93vh",
             alignItems: "center",
             backgroundColor: `${bgColour}`,
           }}

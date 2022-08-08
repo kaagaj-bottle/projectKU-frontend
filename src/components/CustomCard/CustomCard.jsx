@@ -37,7 +37,7 @@ export default function CustomCard({
   };
 
   return (
-    <Card sx={{ maxWidth: 300, minWidth: 300, bgcolor: grey[400] }}>
+    <Card sx={{ maxWidth: 345, minWidth: 330, bgcolor: grey[400] }}>
       <CardHeader title={cardTitle} />
       <CardMedia
         component="img"

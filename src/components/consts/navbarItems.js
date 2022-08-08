@@ -32,21 +32,14 @@ export const bgColour = "cyan";
 export const drawerColor = "crimson";
 
 export const cardInfo = {
-  cardTitles: ["From President", "From Secretary", "From Team", "From Club"],
+  cardTitles: ["From President", "From Secretary", "From Club"],
   imageLinks: [
     "https://picsum.photos/0/500",
     "https://picsum.photos/1/500",
     "https://picsum.photos/2/500",
-    "https://picsum.photos/2/500",
   ],
-  additionalTexts: [
-    "addtional text",
-    "additional text",
-    "additional text",
-    "additional text",
-  ],
+  additionalTexts: ["addtional text", "additional text", "additional text"],
   cardText: [
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, explicabo?",
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, explicabo?",
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, explicabo?",
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, explicabo?",
