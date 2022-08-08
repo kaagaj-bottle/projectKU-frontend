@@ -32,11 +32,11 @@ export const bgColour = "cyan";
 export const drawerColor = "crimson";
 
 export const cardInfo = {
-  cardTitles: ["Intro 1", "Intro 2", "Intro 3"],
+  cardTitles: ["From President", "From Secretary", "From Team"],
   imageLinks: [
-    "https://picsum.photos/200",
-    "https://picsum.photos/200",
-    "https://picsum.photos/200",
+    "https://picsum.photos/0/500",
+    "https://picsum.photos/1/500",
+    "https://picsum.photos/2/500",
   ],
   additionalTexts: ["addtional text", "additional text", "additional text"],
   cardText: [

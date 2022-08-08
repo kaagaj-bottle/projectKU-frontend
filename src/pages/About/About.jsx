@@ -26,6 +26,7 @@ const AboutUs = () => {
           justifyContent: "center",
           display: "flex",
           alignItems: "center",
+          p: 5,
         }}
       >
         {myCards()}

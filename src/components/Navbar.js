@@ -60,7 +60,7 @@ function Navbar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex", mb: 1 }}>
+    <Box sx={{ display: "flex" }}>
       <AppBar component="nav" position="static">
         <Toolbar variant="dense">
           <IconButton
