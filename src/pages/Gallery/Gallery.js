@@ -11,8 +11,25 @@ import {
 
 import { StarBorder } from "@mui/icons-material";
 import { nanoid } from "nanoid";
-
+import "./Gallery.css";
+import ImageCard from "../../components/CustomCards/ImageCard";
+import { useState } from "react";
 const Gallery = () => {
+  const [modalInfo, setModalInfo] = useState({
+    src: "",
+    title: "",
+  });
+  const [closeModal, setCloseModal] = useState(false);
+  const handleImageCardButton = (src, title, event) => {
+    event.preventDefault();
+    setCloseModal((prev) => !prev);
+    setModalInfo({ src, title });
+  };
+
+  const handleCloseModal = (event) => {
+    event.preventDefault();
+    setCloseModal((prev) => !prev);
+  };
   return (
     <Container>
       <ImageList
@@ -26,7 +43,12 @@ const Gallery = () => {
         variant="woven"
       >
         {itemData.map((item) => (
-          <Card key={nanoid()}>
+          <button
+            onClick={(event) =>
+              handleImageCardButton(item.img, item.title, event)
+            }
+            key={nanoid()}
+          >
             <ImageListItem>
               <ImageListItemBar
                 sx={{
@@ -34,11 +56,6 @@ const Gallery = () => {
                     "linear-gradient(to bottom, rgba(0,0,0,0.7)0%, rgba(0,0,0,0.3)70%, rgba(0,0,0,0)100%)",
                 }}
                 title={item.title}
-                // actionIcon={
-                //   <Tooltip title={item.title} sx={{ mr: "5px" }}>
-                //     <Avatar src={item.img} />
-                //   </Tooltip>
-                // }
                 position="bottom"
               />
               <img
@@ -47,8 +64,15 @@ const Gallery = () => {
                 style={{ cursor: "pointer" }}
               />
             </ImageListItem>
-          </Card>
+          </button>
         ))}
+        {closeModal && (
+          <ImageCard
+            title={modalInfo.title}
+            imgSrc={modalInfo.src}
+            handleCloseModal={handleCloseModal}
+          />
+        )}
       </ImageList>
     </Container>
   );
