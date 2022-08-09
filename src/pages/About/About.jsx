@@ -1,13 +1,13 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import { cardInfo } from "../../components/consts/navbarItems";
-import CustomCard from "../../components/CustomCards/AboutCard";
+import AboutCard from "../../components/CustomCards/AboutCard";
 import { nanoid } from "nanoid";
 const AboutUs = () => {
   const myCards = () =>
     cardInfo.cardTitles.map((title, index) => {
       return (
-        <CustomCard
+        <AboutCard
           key={nanoid()}
           cardTitle={title}
           cardImageLink={cardInfo.imageLinks[index]}

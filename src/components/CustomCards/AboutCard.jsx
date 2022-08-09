@@ -24,7 +24,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function CustomCard({
+export default function AboutCard({
   cardText,
   cardTitle,
   cardImageLink,

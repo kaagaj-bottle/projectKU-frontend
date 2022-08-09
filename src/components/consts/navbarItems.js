@@ -16,8 +16,8 @@ const navbarItems = [
   },
   {
     id: 3,
-    label: "Programs",
-    route: "/programs",
+    label: "Gallery",
+    route: "/gallery",
   },
   {
     id: 4,
@@ -34,9 +34,9 @@ export const drawerColor = "crimson";
 export const cardInfo = {
   cardTitles: ["From President", "From Secretary", "From Club"],
   imageLinks: [
-    "https://picsum.photos/0/500",
-    "https://picsum.photos/1/500",
-    "https://picsum.photos/2/500",
+    "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
+    "https://source.unsplash.com/random",
+    "https://source.unsplash.com/random",
   ],
   additionalTexts: ["addtional text", "additional text", "additional text"],
   cardText: [
