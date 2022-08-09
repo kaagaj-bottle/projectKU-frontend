@@ -22,15 +22,17 @@
 }
 
 /* Caption of Modal Image */
-#caption {
+.caption {
   margin: auto;
   display: block;
   width: 80%;
   max-width: 700px;
   text-align: center;
   color: #ccc;
-  padding: 10px 0;
+
   height: 150px;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 /* Add Animation */

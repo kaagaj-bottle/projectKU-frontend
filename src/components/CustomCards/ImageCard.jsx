@@ -7,8 +7,8 @@ const ImageCard = ({ title, imgSrc, handleCloseModal }) => {
       <span className="close" onClick={handleCloseModal}>
         &times;
       </span>
-      <img className="modal-content" src={imgSrc} />
-      <div>{title}</div>
+      <img className="modal-content" src={imgSrc} alt={title} />
+      <div className="caption">{title}</div>
     </div>
   );
 };
