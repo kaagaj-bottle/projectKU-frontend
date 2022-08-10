@@ -5,33 +5,30 @@ import React from "react";
 import { Paper } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import QueriesOrMessageForm from "../../components/QueriesOrMessageForm";
+import LetsConnect from "../../components/LetsConnect";
 const Contact = () => {
+  const myMinHeight = "100vh";
   return (
-    <Grid container justifyContent={"center"} sx={{ bgcolor: grey[400] }}>
-      <Grid item xs={12} md={4} justifyContent="center" p={2}>
-        <Grid container justifyContent="center">
-          <Typography
-            sx={{
-              fontSize: { xs: "1.2rem", md: "1.5rem" },
-              fontStyle: "italic",
-            }}
-          >
-            Any Queries or Message!
-          </Typography>
-        </Grid>
-        <QueriesOrMessageForm />
-      </Grid>
-
+    <Grid
+      container
+      justifyContent={"center"}
+      sx={{ bgcolor: grey[400] }}
+      minHeight="90vh"
+      alignItems="center"
+    >
       <Grid
         item
         xs={12}
         md={4}
-        sx={{ borderRight: { xs: 1 }, borderBottom: { xs: 1, sm: 1, md: 0 } }}
+        justifyContent="center"
+        p={2}
+        minHeight={myMinHeight}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, odit
-        impedit? Magni mollitia hic nemo atque! Labore ducimus, non fugiat
-        mollitia repudiandae sapiente eligendi voluptas cum saepe earum, nam
-        eaque!
+        <QueriesOrMessageForm />
+      </Grid>
+
+      <Grid item xs={12} md={4} sx={{ p: 2, mb: 20 }}>
+        <LetsConnect />
       </Grid>
 
       <Grid item xs={12} md={4}>

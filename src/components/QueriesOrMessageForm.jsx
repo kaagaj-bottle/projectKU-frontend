@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Grid, TextField, Button, Paper } from "@mui/material";
+import { Grid, TextField, Button, Paper, Typography } from "@mui/material";
 
 const QueriesOrMessageForm = () => {
   const paddingBottom = 2;
@@ -23,73 +23,85 @@ const QueriesOrMessageForm = () => {
     console.log(formValues);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <Grid
-        container
-        sx={{ pt: paddingBottom }}
-        justifyContent="center"
-        component={Paper}
-      >
-        <Grid xs={10} item pb={paddingBottom}>
-          <TextField
-            placeholder="Name"
-            label="Name"
-            variant="outlined"
-            fullWidth
-            required
-            name="name"
-            value={formValues.name}
-            onChange={handleInputChange}
-          />
-        </Grid>
-
-        <Grid item xs={10} pb={paddingBottom}>
-          <TextField
-            type="email"
-            placeholder="Enter email"
-            label="Email"
-            variant="outlined"
-            fullWidth
-            required
-            name="email"
-            value={formValues.email}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item xs={10} pb={paddingBottom}>
-          <TextField
-            type="text"
-            placeholder="Enter phone number"
-            label="Phone"
-            variant="outlined"
-            fullWidth
-            required
-            name="phone"
-            value={formValues.phone}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item xs={10} pb={paddingBottom}>
-          <TextField
-            label="Message"
-            multiline
-            rows={4}
-            placeholder="Type your message here"
-            variant="outlined"
-            fullWidth
-            required
-            name="message"
-            value={formValues.message}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item xs={10} pb={paddingBottom}>
-          <Button type="submit" variant="contained" color="primary" p={2}>
-            Submit
-          </Button>
-        </Grid>
+    <>
+      <Grid container justifyContent="center">
+        <Typography
+          sx={{
+            fontSize: { xs: "1.2rem", md: "1.8rem" },
+            fontStyle: "italic",
+          }}
+        >
+          Any Queries or Message!
+        </Typography>
       </Grid>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <Grid
+          container
+          sx={{ pt: paddingBottom }}
+          justifyContent="center"
+          component={Paper}
+        >
+          <Grid xs={10} item pb={paddingBottom}>
+            <TextField
+              placeholder="Name"
+              label="Name"
+              variant="outlined"
+              fullWidth
+              required
+              name="name"
+              value={formValues.name}
+              onChange={handleInputChange}
+            />
+          </Grid>
+
+          <Grid item xs={10} pb={paddingBottom}>
+            <TextField
+              type="email"
+              placeholder="Enter email"
+              label="Email"
+              variant="outlined"
+              fullWidth
+              required
+              name="email"
+              value={formValues.email}
+              onChange={handleInputChange}
+            />
+          </Grid>
+          <Grid item xs={10} pb={paddingBottom}>
+            <TextField
+              type="text"
+              placeholder="Enter phone number"
+              label="Phone"
+              variant="outlined"
+              fullWidth
+              required
+              name="phone"
+              value={formValues.phone}
+              onChange={handleInputChange}
+            />
+          </Grid>
+          <Grid item xs={10} pb={paddingBottom}>
+            <TextField
+              label="Message"
+              multiline
+              rows={4}
+              placeholder="Type your message here"
+              variant="outlined"
+              fullWidth
+              required
+              name="message"
+              value={formValues.message}
+              onChange={handleInputChange}
+            />
+          </Grid>
+          <Grid item xs={10} pb={paddingBottom}>
+            <Button type="submit" variant="contained" color="primary" p={2}>
+              Submit
+            </Button>
+          </Grid>
+        </Grid>
+      </form>
+    </>
   );
 };
 export default QueriesOrMessageForm;
