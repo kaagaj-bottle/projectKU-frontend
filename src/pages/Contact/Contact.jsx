@@ -1,9 +1,10 @@
 import { Grid, Divider, Typography, Box } from "@mui/material";
 import { borderBottom } from "@mui/system";
 import React from "react";
-import SayHiForm from "../../components/SayHiForm";
+
 import { Paper } from "@mui/material";
 import { grey } from "@mui/material/colors";
+import QueriesOrMessageForm from "../../components/QueriesOrMessageForm";
 const Contact = () => {
   return (
     <Grid container justifyContent={"center"} sx={{ bgcolor: grey[400] }}>
@@ -18,7 +19,7 @@ const Contact = () => {
             Any Queries or Message!
           </Typography>
         </Grid>
-        <SayHiForm />
+        <QueriesOrMessageForm />
       </Grid>
 
       <Grid

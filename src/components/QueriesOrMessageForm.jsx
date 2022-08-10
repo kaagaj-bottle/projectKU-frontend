@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Grid, TextField, Button, Paper } from "@mui/material";
 
-const SayHiForm = () => {
+const QueriesOrMessageForm = () => {
   const paddingBottom = 2;
   const [formValues, setFormValues] = useState({
     name: "",
@@ -92,4 +92,4 @@ const SayHiForm = () => {
     </form>
   );
 };
-export default SayHiForm;
+export default QueriesOrMessageForm;
