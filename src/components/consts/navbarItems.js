@@ -46,4 +46,5 @@ export const cardInfo = {
   ],
 };
 
+export const minHeight = "93vh";
 export default navbarItems;

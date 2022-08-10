@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "@fontsource/roboto";
-import { bgColour } from "../../components/consts/navbarItems";
+import { bgColour, minHeight } from "../../components/consts/navbarItems";
 const Home = () => {
   return (
     <>
@@ -17,9 +17,10 @@ const Home = () => {
         <Grid
           container
           sx={{
-            minHeight: "93vh",
+            minHeight: `${minHeight}`,
             alignItems: "center",
             backgroundColor: `${bgColour}`,
+            pl: { xs: 0, md: 10 },
           }}
         >
           <Box>
@@ -47,9 +48,6 @@ const Home = () => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint ut
               neque debitis qui delectus? Dolorem?
             </Typography>
-            <Button variant="contained" sx={{ m: 1 }}>
-              Join Us
-            </Button>
           </Box>
         </Grid>
       </Box>

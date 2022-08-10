@@ -1,8 +1,9 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
-import { cardInfo } from "../../components/consts/navbarItems";
+import { bgColour, cardInfo } from "../../components/consts/navbarItems";
 import AboutCard from "../../components/CustomCards/AboutCard";
 import { nanoid } from "nanoid";
+import { minHeight } from "../../components/consts/navbarItems";
 const AboutUs = () => {
   const myCards = () =>
     cardInfo.cardTitles.map((title, index) => {
@@ -23,11 +24,12 @@ const AboutUs = () => {
         columnGap={7}
         rowGap={2}
         sx={{
-          minHeight: "90vh",
+          minHeight: `${minHeight}`,
           justifyContent: "center",
           display: "flex",
           alignItems: "center",
           pt: 1,
+          bgcolor: `${bgColour}`,
         }}
       >
         {myCards()}

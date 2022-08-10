@@ -12,6 +12,7 @@ import { nanoid } from "nanoid";
 import { Button, Grid } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Box } from "@mui/system";
+import { bgColour, minHeight } from "../../components/consts/navbarItems";
 
 function Notices() {
   const [notices, setNotices] = useState([]);
@@ -27,7 +28,11 @@ function Notices() {
     window.open(pdfUrl);
   };
   return (
-    <Grid container justifyContent={"center"}>
+    <Grid
+      container
+      justifyContent={"center"}
+      sx={{ bgcolor: `${bgColour}`, minHeight: `${minHeight}` }}
+    >
       <Grid item xs={12} md={11} sx={{ p: 2 }}>
         <TableContainer component={Paper}>
           <Table aria-label="simple table">
