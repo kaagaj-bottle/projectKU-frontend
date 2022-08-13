@@ -8,7 +8,7 @@ const Address = () => {
     fontWeight: "bold",
   };
 
-  const [clubEmail, setClubEmail] = useState("demo@gmail.com");
+  const [clubEmail, setClubEmail] = useState("demo@ku.edu.np");
   return (
     <>
       <Grid container justifyContent="center">
@@ -34,10 +34,11 @@ const Address = () => {
             <Typography sx={myStyle} variant="string">
               Address:
             </Typography>
+            <Typography component="span">Kathmandu University</Typography>
             <br />
-            <Typography component="span">Biratnagar-7, Morang</Typography>
+            <Typography component="span">Dhulikhel, Kavre</Typography>
             <br />
-            <Typography component="span">Pradesh 1, Nepal</Typography>
+            <Typography component="span">Bagmati Pradesh, Nepal</Typography>
           </Typography>
         </Grid>
 

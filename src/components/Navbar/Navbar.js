@@ -1,5 +1,7 @@
 import * as React from "react";
-
+import logo from "../../images/logo.png";
+import "./Navbar.css";
+import { Avatar, Grid } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
@@ -13,10 +15,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import navbarItems, { drawerColor } from "./consts/navbarItems";
+import navbarItems, { drawerColor } from "../consts/navbarItems";
 import { Link } from "react-router-dom";
 import { nanoid } from "nanoid";
-import { clubName } from "./consts/navbarItems";
+import { clubName, clubLogoLink } from "../consts/navbarItems";
+import { Image } from "@mui/icons-material";
 const drawerWidth = 240;
 
 function Navbar(props) {
@@ -37,7 +40,7 @@ function Navbar(props) {
       }}
     >
       <Typography variant="h6" sx={{ my: 2 }}>
-        {clubName}
+        I<img src={logo} />
       </Typography>
       <Divider />
       <List>
@@ -72,13 +75,22 @@ function Navbar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
+          <Box
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            {clubName}
-          </Typography>
+            <Box component={Link} to="/">
+              <Box
+                component="img"
+                sx={{
+                  maxHeight: { xs: "2rem", sm: "2rem", md: "3rem" },
+                  pt: 1,
+                }}
+                alt="KU Indoors Logo"
+                src={logo}
+              />
+            </Box>
+          </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navbarItems.map((item) => (
               <Button

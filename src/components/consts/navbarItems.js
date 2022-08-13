@@ -27,7 +27,14 @@ const navbarItems = [
 ];
 
 export const clubName = "KU INDOORS";
-
+export const clubLogoLink = (
+  <iframe
+    src="https://drive.google.com/file/d/1agSQeC2MS4J_2LvP8ncU-T-ihsAeI0Pe/preview"
+    width="640"
+    height="480"
+    allow="autoplay"
+  ></iframe>
+);
 export const bgColour = "cyan";
 export const drawerColor = "crimson";
 
