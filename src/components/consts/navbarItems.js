@@ -1,3 +1,4 @@
+import advisor from "../../images/punyaKoirala.jpg";
 const navbarItems = [
   {
     id: 0,
@@ -39,14 +40,21 @@ export const bgColour = "cyan";
 export const drawerColor = "crimson";
 
 export const cardInfo = {
-  cardTitles: ["From President", "From Secretary", "From Club"],
+  cardTitles: ["From Advisor", "From President", "From Secretary", "From Club"],
   imageLinks: [
+    advisor,
     "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
     "https://source.unsplash.com/random",
     "https://source.unsplash.com/random",
   ],
-  additionalTexts: ["addtional text", "additional text", "additional text"],
+  additionalTexts: [
+    "addtional text",
+    "additional text",
+    "additional text",
+    "additional text",
+  ],
   cardText: [
+    "This club is for the innovation of literature and indoor",
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, explicabo?",
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, explicabo?",
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, explicabo?",
@@ -54,4 +62,5 @@ export const cardInfo = {
 };
 
 export const minHeight = "93vh";
+export const cardColour = "#1ab3b3";
 export default navbarItems;

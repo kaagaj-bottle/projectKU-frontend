@@ -10,7 +10,7 @@ import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { grey } from "@mui/material/colors";
-
+import { cardColour } from "../consts/navbarItems";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const ExpandMore = styled((props) => {
@@ -37,11 +37,11 @@ export default function AboutCard({
   };
 
   return (
-    <Card sx={{ maxWidth: 345, minWidth: 330, bgcolor: grey[400] }}>
+    <Card sx={{ maxWidth: 345, minWidth: 330, bgcolor: `${cardColour}` }}>
       <CardHeader title={cardTitle} />
       <CardMedia
         component="img"
-        height="194"
+        height="250"
         image={cardImageLink}
         alt={cardTitle}
       />
