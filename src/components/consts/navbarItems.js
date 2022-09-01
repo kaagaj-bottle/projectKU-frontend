@@ -25,6 +25,11 @@ const navbarItems = [
     label: "Contact us",
     route: "/contact",
   },
+  {
+    id: 5,
+    label: "Admin",
+    route: "/admin",
+  },
 ];
 
 export const clubName = "KU INDOORS";

@@ -1,6 +1,15 @@
 import axios from "axios";
 const baseUrl = "http://localhost:3001/api/notices";
 
+let token = null;
+let config = null;
+const setToken = (newToken) => {
+  token = `bearer ${newToken}`;
+  config = {
+    headers: { Authorization: token },
+  };
+};
+
 const getAll = async () => {
   const response = await axios.get(baseUrl);
   return response.data;
@@ -11,9 +20,9 @@ const getOne = async (id) => {
   return response.data;
 };
 
-const create = async (newObject) => {
-  const response = await axios.post(baseUrl, newObject);
+const create = async (noticeObject) => {
+  const response = await axios.post(baseUrl, noticeObject, config);
   return response.data;
 };
 
-export default { getAll, create, getOne };
+export default { getAll, create, getOne, setToken };

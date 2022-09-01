@@ -73,7 +73,7 @@ function Notices() {
                     <TableCell align="center">
                       <Button
                         variant="contained"
-                        onClick={(event) => handleViewPdf(event, row.pdfUrl)}
+                        onClick={(event) => handleViewPdf(event, row.pdfLink)}
                       >
                         View
                       </Button>

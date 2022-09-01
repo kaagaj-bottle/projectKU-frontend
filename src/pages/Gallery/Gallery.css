@@ -1,6 +1,4 @@
-button,
-input[type="submit"],
-input[type="reset"] {
+.gallery--btn {
   background: none;
   color: inherit;
   border: none;
@@ -10,6 +8,6 @@ input[type="reset"] {
   outline: inherit;
 }
 
-button:hover {
+.gallery--btn:hover {
   opacity: 0.7;
 }

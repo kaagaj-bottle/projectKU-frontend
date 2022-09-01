@@ -61,6 +61,7 @@ const Gallery = () => {
         >
           {imageData.map((item) => (
             <button
+              className="gallery--btn"
               onClick={(event) =>
                 handleImageCardButton(item.img, item.title, event)
               }

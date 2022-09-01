@@ -7,6 +7,9 @@ import AboutUs from "./pages/About/About";
 import Notices from "./pages/Notices/Notices";
 import Gallery from "./pages/Gallery/Gallery";
 import Contact from "./pages/Contact/Contact";
+import Admin from "./pages/Admin/Admin";
+import navbarItems from "./components/consts/navbarItems";
+
 const App = () => {
   return (
     <>
@@ -14,10 +17,11 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Gallery" element={<Gallery />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/notices" element={<Notices />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </>
   );
