@@ -6,7 +6,9 @@ const Notice = ({ notice, noticeDeleteBtnClicked }) => {
     <div className="notice">
       <div>
         title: {notice.title}
-        <button onClick={noticeDeleteBtnClicked}>delete</button>
+        <button onClick={(event) => noticeDeleteBtnClicked(event, notice.id)}>
+          delete
+        </button>
         <Togglable buttonLabel0="more" buttonLabel1="less">
           <p>author: {notice.postedBy}</p>
           <p>link: {notice.pdfLink}</p>

@@ -5,13 +5,12 @@ import NoticeForm from "./NoticeForm";
 import { nanoid } from "nanoid";
 import { useState, useEffect, useRef } from "react";
 
-const Editor = ({}) => {
+const Editor = () => {
   const [notices, setNotices] = useState([]);
   const [noticeObj, setNoticeObj] = useState({
     title: "",
     pdfLink: "",
   });
-  const noticeRef = useRef;
 
   useEffect(() => {
     noticeService.getAll().then((notices) => {
@@ -37,7 +36,6 @@ const Editor = ({}) => {
         title: "",
         pdfLink: "",
       });
-      noticeRef.current.toggleVisibility();
     } catch (exception) {
       console.log(exception);
     }
@@ -45,6 +43,16 @@ const Editor = ({}) => {
 
   const noticeDeleteBtnClicked = async (event, id) => {
     event.preventDefault();
+    try {
+      await noticeService.remove(id);
+      setNotices((prevNotices) =>
+        prevNotices.filter((item) => {
+          return item.id !== id;
+        })
+      );
+    } catch (exception) {
+      console.log(exception);
+    }
   };
   return (
     <div className="notices--block">
@@ -55,7 +63,11 @@ const Editor = ({}) => {
         pdfLink={noticeObj.pdfLink}
       />
       {notices.map((item) => (
-        <Notice notice={item} key={nanoid()} />
+        <Notice
+          notice={item}
+          key={nanoid()}
+          noticeDeleteBtnClicked={noticeDeleteBtnClicked}
+        />
       ))}
     </div>
   );
