@@ -3,7 +3,7 @@ import Notice from "./Notice";
 import "./Editor.css";
 import NoticeForm from "./NoticeForm";
 import { nanoid } from "nanoid";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 const Editor = () => {
   const [notices, setNotices] = useState([]);
