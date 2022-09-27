@@ -25,4 +25,9 @@ const create = async (noticeObject) => {
   return response.data;
 };
 
-export default { getAll, create, getOne, setToken };
+const remove = async (id) => {
+  const response = await axios.delete(`${baseUrl}/${id}`, config);
+  return response.data;
+};
+
+export default { getAll, create, getOne, remove, setToken };
