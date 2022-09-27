@@ -1,31 +1,21 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import loginService from "../../services/login";
 import noticeService from "../../services/notices";
-import Editor from "./Editor/Editor";
+import NoticeEditor from "./NoticeEditor/Editor";
+import AboutPageCardEditor from "./AboutPageCardEditor/Editor";
 import LoginForm from "./Login/LoginForm";
+import commonFuncs from "../../components/commonFuncs";
 const App = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
-  const [notices, setNotices] = useState([]);
-  const [noticeObj, setNoticeObj] = useState({
-    title: "",
-    pdfLink: "",
-  });
-  const noticeRef = useRef();
-
-  useEffect(() => {
-    noticeService.getAll().then((notices) => {
-      setNotices(notices);
-    });
-  }, []);
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedUser");
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON);
       setUser(user);
-      noticeService.setToken(user.token);
+      commonFuncs.setToken(user.token);
     }
   }, []);
 
@@ -54,29 +44,6 @@ const App = () => {
     }
   };
 
-  const handleNoticeData = (event) => {
-    event.preventDefault();
-    const name = event.target.name;
-    const value = event.target.value;
-    setNoticeObj((prevNoticeObj) => {
-      return { ...prevNoticeObj, [name]: value };
-    });
-  };
-
-  const handleNoticeCreation = async (event) => {
-    event.preventDefault();
-    try {
-      const returnedNotice = await noticeService.create(noticeObj);
-      setNotices((prevNotices) => prevNotices.concat(returnedNotice));
-      setNoticeObj({
-        title: "",
-        pdfLink: "",
-      });
-      noticeRef.current.toggleVisibility();
-    } catch (exception) {
-      console.log(exception);
-    }
-  };
   const condRendering = () => {
     if (user === null) {
       return (
@@ -104,13 +71,9 @@ const App = () => {
           >
             logout
           </button>
-          <Editor
-            notices={notices}
-            handleNoticeData={handleNoticeData}
-            handleNoticeCreation={handleNoticeCreation}
-            noticeTitle={noticeObj.title}
-            noticePdfLink={noticeObj.pdfLink}
-          />
+          <NoticeEditor />
+          <p />
+          <AboutPageCardEditor />
         </h3>
       </div>
     );
