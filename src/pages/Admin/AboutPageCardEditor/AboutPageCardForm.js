@@ -6,12 +6,17 @@ const AboutPageCardForm = ({
   heading,
   caption,
   additionalText,
-  imageLink,
+  aboutPageCardImage,
+  handleImage,
 }) => {
   return (
     <>
       <h4>Create new About Page Card</h4>
-      <form onSubmit={handleCardCreation} className="card--form">
+      <form
+        onSubmit={handleCardCreation}
+        className="card--form"
+        encType="multipart/form-data"
+      >
         <label htmlFor="heading">heading: </label>
         <input
           id="heading"
@@ -43,14 +48,14 @@ const AboutPageCardForm = ({
           column="5"
         />
         <br />
-        <label htmlFor="imageLink">image-link: </label>
+        <label htmlFor="aboutPageCardImage">image-link: </label>
 
         <input
-          id="imageLink"
-          type="text"
-          name="imageLink"
-          value={imageLink}
-          onChange={handleCardData}
+          id="aboutPageCardImage"
+          type="file"
+          name="aboutPageCardImage"
+          accept="image/*"
+          onChange={handleImage}
         />
         <br />
         <button type="submit">post</button>

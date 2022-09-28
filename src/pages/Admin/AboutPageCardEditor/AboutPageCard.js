@@ -14,7 +14,7 @@ const AboutPageCard = ({ card, cardDeleteBtnClicked }) => {
           <p>additionalText: {card.additionalText}</p>
           <p>
             image link:{" "}
-            <a target="_blank" href={card.imageLink}>
+            <a target="_blank" href={card.aboutPageCardImage}>
               open
             </a>
           </p>

@@ -11,7 +11,7 @@ const Editor = () => {
     heading: "",
     caption: "",
     additionalText: "",
-    imageLink: "",
+    aboutPageCardImage: null,
   });
 
   useEffect(() => {
@@ -40,16 +40,21 @@ const Editor = () => {
       cardObj.heading &&
       cardObj.caption &&
       cardObj.additionalText &&
-      cardObj.imageLink
+      cardObj.aboutPageCardImage
     ) {
+      const formData = new FormData();
+      formData.append("aboutPageCardImage", cardObj.aboutPageCardImage);
+      formData.append("heading", cardObj.heading);
+      formData.append("additionalText", formData.additionalText);
+      formData.append("caption", cardObj.caption);
       try {
-        const returnedCard = await aboutPageCardService.create(cardObj);
+        const returnedCard = await aboutPageCardService.create(formData);
         setAboutPageCards((prevCards) => prevCards.concat(returnedCard));
         setCardObj({
           heading: "",
           caption: "",
           additionalText: "",
-          imageLink: "",
+          aboutPageCardImage: null,
         });
       } catch (exception) {
         console.log(exception);
@@ -59,6 +64,7 @@ const Editor = () => {
 
   const cardDeleteBtnClicked = async (event, id) => {
     event.preventDefault();
+
     try {
       await aboutPageCardService.remove(id);
       setAboutPageCards((prevCards) =>
@@ -71,6 +77,20 @@ const Editor = () => {
     }
   };
 
+  const handleImage = (event) => {
+    let image = event.target.files[0];
+    setCardObj((prevObject) => {
+      const newObj = {
+        heading: prevObject.heading,
+        caption: prevObject.caption,
+        additionalText: prevObject.additionalText,
+        aboutPageCardImage: image,
+      };
+
+      return newObj;
+    });
+  };
+
   return (
     <div className="about--page--cards--block">
       <AboutPageCardForm
@@ -79,7 +99,8 @@ const Editor = () => {
         heading={cardObj.heading}
         caption={cardObj.caption}
         additionalText={cardObj.additionalText}
-        imageLink={cardObj.imageLink}
+        aboutPageCardImage={cardObj.aboutPageCardImage}
+        handleImage={handleImage}
       />
       {aboutPageCards.map((card) => (
         <AboutPageCard
