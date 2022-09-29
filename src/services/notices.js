@@ -1,7 +1,7 @@
 import axios from "axios";
 import commonFuncs from "../components/commonFuncs";
 
-const baseUrl = "http://localhost:3001/api/notices";
+const baseUrl = "/api/notices";
 
 // let token = null;
 // let config = null;

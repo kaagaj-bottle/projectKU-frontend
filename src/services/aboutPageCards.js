@@ -1,6 +1,6 @@
 import axios from "axios";
 import commonFuncs from "../components/commonFuncs";
-const baseUrl = "http://localhost:3001/api/about-page-cards";
+const baseUrl = "/api/about-page-cards";
 
 const getAll = async () => {
   const response = await axios.get(baseUrl);
