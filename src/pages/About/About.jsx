@@ -4,16 +4,30 @@ import { bgColour, cardInfo } from "../../components/consts/navbarItems";
 import AboutCard from "../../components/CustomCards/AboutCard";
 import { nanoid } from "nanoid";
 import { minHeight } from "../../components/consts/navbarItems";
+import { useEffect, useState } from "react";
+import aboutPageCardsService from "../../services/aboutPageCards";
+import { WindowTwoTone } from "@mui/icons-material";
+
 const AboutUs = () => {
+  const [aboutPageCards, setAboutPageCards] = useState([]);
+
+  useEffect(() => {
+    aboutPageCardsService
+      .getAll()
+      .then((response) => {
+        setAboutPageCards(response);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   const myCards = () =>
-    cardInfo.cardTitles.map((title, index) => {
+    aboutPageCards.map((item) => {
       return (
         <AboutCard
           key={nanoid()}
-          cardTitle={title}
-          cardImageLink={cardInfo.imageLinks[index]}
-          additionalCardText={cardInfo.additionalTexts[index]}
-          cardText={cardInfo.cardText[index]}
+          heading={item.heading}
+          image={item.image}
+          additionalText={item.additionalText}
+          caption={item.caption}
         />
       );
     });

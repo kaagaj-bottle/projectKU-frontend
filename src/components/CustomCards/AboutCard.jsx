@@ -24,30 +24,32 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function AboutCard({
-  cardText,
-  cardTitle,
-  cardImageLink,
-  additionalCardText,
-}) {
+export default function AboutCard({ caption, heading, image, additionalText }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  const blob = new Blob([Int8Array.from(image.data.data)], {
+    type: image.contentType,
+  });
+
+  const decodedImage = window.URL.createObjectURL(blob);
+
   return (
     <Card sx={{ maxWidth: 345, minWidth: 330, bgcolor: `${cardColour}` }}>
-      <CardHeader title={cardTitle} />
+      <CardHeader title={heading} />
       <CardMedia
         component="img"
         height="250"
-        image={cardImageLink}
-        alt={cardTitle}
+        src={decodedImage}
+        alt={heading}
       />
+
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {cardText}
+          {caption}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -62,7 +64,7 @@ export default function AboutCard({
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>{additionalCardText}</Typography>
+          <Typography paragraph>{additionalText}</Typography>
         </CardContent>
       </Collapse>
     </Card>
